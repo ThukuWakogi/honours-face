@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div class="cstm-pic-category">
+  <div class="cstm-pic-category-info">Recent Submissions</div>
+  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="4px" fxLayoutAlign="center">
+    <ng-container *ngFor="let _ of [1,2,3,4]">
+      <mat-card>
+        <div class="cstm-img-div">
+          <img class="cstm-img" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        </div>
+        <div class="cstm-site-info">
+          <h4>Name of site</h4>
+          <div>
+            <p>lol</p>
+            <p>lol</p>
+          </div>
+        </div>
+        <div class="cstm-site-footer">
+          <div>
+            <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">
+          </div>
+          <div>
+            <p class="mat-body">by him</p>
+          </div>
+        </div>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
+

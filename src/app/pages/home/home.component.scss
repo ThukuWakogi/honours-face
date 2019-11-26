@@ -1,0 +1,51 @@
+mat-card {
+  width: 300px;
+  padding: 0px;
+  margin-right: 0px;
+  margin: 16px;
+  border-radius: 0px;
+  box-shadow: none !important;
+  & > .cstm-img-div {
+    & > img {
+      width: 100% !important;
+    }
+  }
+}
+
+.cstm-pic-category {
+  padding: 0px 6%;
+  & > .cstm-pic-category-info {
+    padding: 50px 0px;
+  }
+}
+
+.cstm-site-info {
+  padding: 12px;
+  margin-top: -5px;
+  & > h4 {
+    font-weight: lighter;
+    margin: 8px 0px;
+  }
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.cstm-site-footer {
+  display: flex;
+  align-items: center;
+  & > div {
+    & > img {
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    & > p {
+      font-weight: lighter;
+      margin-left: 8px;
+    }
+  }
+}
