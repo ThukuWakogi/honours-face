@@ -1,0 +1,9 @@
+.cstm-auth-pic-register {
+  background-image: url('./../../../assets/images/photo-1472289065668-ce650ac443d2.jpg');
+  background-size: cover;
+  background-position: left;
+}
+
+:host ::ng-deep mat-progress-spinner circle {
+  stroke: white;
+}

@@ -1,1 +1,51 @@
-<p>register works!</p>
+<div class="cstm-auth-container">
+  <div class="cstm-auth-pic cstm-auth-pic-register"></div>
+  <div class="cstm-auth-form">
+    <p>honours</p>
+    <h3>Are you a member? login</h3>
+    <form [formGroup]=registerForm>
+      <mat-form-field>
+        <input matInput placeholder="username" type="text" formControlName="username">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="email" type="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="password"
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+        >
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="showPassword = !showPassword"
+          type="button"
+        >
+          <mat-icon>{{ showPassword ? 'visibility_on' : 'visibility_off' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="confirm password"
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="confirmPassword"
+        >
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="showPassword = !showPassword"
+          type="button"
+        >
+          <mat-icon>{{ showPassword ? 'visibility_on' : 'visibility_off' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">
+        <mat-progress-spinner mode="indeterminate" diameter="25" *ngIf="sendingRequest"></mat-progress-spinner>
+        <span>create your account</span>
+      </button>
+    </form>
+  </div>
+</div>

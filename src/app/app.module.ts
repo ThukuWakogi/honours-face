@@ -5,6 +5,10 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatCardModule } from '@angular/material/card'
+import { MatInputModule } from '@angular/material/input'
+import { ReactiveFormsModule } from '@angular/forms'
+import { MatIconModule } from '@angular/material/icon'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -30,7 +34,11 @@ import { NavbarComponent } from './components/navbar/navbar.component'
     MatButtonModule,
     MatSidenavModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

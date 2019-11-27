@@ -30,3 +30,45 @@ $honours-face-theme: mat-light-theme($honours-face-primary, $honours-face-accent
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cstm-auth-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  .cstm-auth-pic, .cstm-auth-form {
+    width: 50%;
+    height: 100%;
+    padding: 35px;
+    & > p, h3 {
+      text-align: center;
+      margin: 6px 0px;
+    }
+    & > h3 {
+      margin-top: 16px;
+      font-weight: lighter;
+    }
+  }
+  .cstm-auth-form {
+    & > form {
+      margin-top: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      & > button[type="submit"] {
+        height: 60px;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 16px;
+        & > span {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          & > span {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
