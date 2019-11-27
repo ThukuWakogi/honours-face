@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from './services/authentication/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('drawer', { static: false }) drawer: any
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
+    this.authenticationService.getLoggedInUser()
+  }
 
   ngOnInit() {
   }
