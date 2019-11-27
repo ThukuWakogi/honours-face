@@ -57,4 +57,13 @@ mat-toolbar-row {
       }
     }
   }
+  .cstm-nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-65%);
+    & > span > a {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }
