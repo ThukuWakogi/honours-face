@@ -18,14 +18,23 @@ export class AuthenticationService {
 
   public get currentUserValue() {return this.currentUserSubject.value}
 
-  register(user) {
+  register(registrationData) {
     return this
       .http
-      .post(`${environment.apiUrl}/users/`, user)
+      .post(`${environment.apiUrl}/users/`, registrationData)
       .pipe(map((data: any) => {
         console.log({data})
         localStorage.setItem('hnrs_token', data.token)
         this.currentUserSubject.next(data.user)
+      }))
+  }
+
+  login(loginData) {
+    return this
+      .http
+      .post<any>(`${environment.apiUrl}/auth/`, loginData)
+      .pipe(map(data => {
+        console.log({data})
       }))
   }
 }
