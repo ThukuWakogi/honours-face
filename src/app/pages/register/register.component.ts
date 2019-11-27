@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   showPassword = false
-  sendingRequest = true
+  sendingRequest = false
   registerForm: FormGroup
 
   constructor() { }
