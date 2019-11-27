@@ -9,10 +9,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('drawer', { static: false }) drawer: ElementRef
 
   ngOnInit() {
-    console.log(this.drawer)
   }
 
   ngAfterViewInit() {
-    console.log(this.drawer)
   }
 }

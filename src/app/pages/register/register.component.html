@@ -3,12 +3,21 @@
   <div class="cstm-auth-form" fxFlex="50%" fxFlex.lt-sm="100%">
     <p>honours</p>
     <h3>Are you a member? <a [routerLink]="['/login']">login</a></h3>
-    <form [formGroup]=registerForm>
+    <form [formGroup]=registerForm (ngSubmit)="onSubmit()">
       <mat-form-field>
         <input matInput placeholder="username" type="text" formControlName="username">
+        <mat-error *ngIf="registerForm.get('username').hasError('required')">
+          username is required
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="email" type="email" formControlName="email">
+        <mat-error *ngIf="registerForm.get('email').hasError('email') && !registerForm.get('email').hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="registerForm.get('email').hasError('required')">
+          email is required
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
@@ -25,6 +34,9 @@
         >
           <mat-icon>{{ showPassword ? 'visibility_on' : 'visibility_off' }}</mat-icon>
         </button>
+        <mat-error *ngIf="registerForm.get('password').hasError('required')">
+          password is required
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
@@ -47,5 +59,6 @@
         <span>create your account</span>
       </button>
     </form>
+    <p *ngIf="checkPasswordMatch()" style="color: red; margin-top: 24px;">passwords don't match</p>
   </div>
 </div>
