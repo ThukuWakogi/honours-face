@@ -2,7 +2,7 @@
   <div class="cstm-auth-pic cstm-auth-pic-register"></div>
   <div class="cstm-auth-form">
     <p>honours</p>
-    <h3>Are you a member? login</h3>
+    <h3>Are you a member? <a [routerLink]="['/login']">login</a></h3>
     <form [formGroup]=registerForm>
       <mat-form-field>
         <input matInput placeholder="username" type="text" formControlName="username">

@@ -26,6 +26,9 @@ $honours-face-theme: mat-light-theme($honours-face-primary, $honours-face-accent
 // that you are using.
 @include angular-material-theme($honours-face-theme);
 
+$primary-color: mat-color($mat-indigo);
+$accent-color: mat-color($mat-indigo);
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
@@ -46,6 +49,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     & > h3 {
       margin-top: 16px;
       font-weight: lighter;
+      & > a, & > a:active {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: normal;
+      }
     }
   }
   .cstm-auth-form {
@@ -59,6 +67,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         box-shadow: none;
         border-radius: 0;
         margin-top: 16px;
+        text-transform: uppercase;
         & > span {
           display: flex;
           flex-direction: row;
