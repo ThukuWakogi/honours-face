@@ -1,1 +1,45 @@
-<p>siteform works!</p>
+<div fxLayout="row" fxLayout.lt-sm="column" class="cstm-site-form-container">
+  <div fxFlex.gt-sm="60%" class="cstm-img-preview-div">
+    <p>landing page preview</p>
+    <img *ngIf="previewPhoto" [src]="previewPhoto" alt="">
+    <div *ngIf="previewPhoto == null || previewPhoto == undefined">
+      <i class="material-icons">insert_photo</i>
+    </div>
+  </div>
+  <div fxFlex.gt-sm="40%" class="cstm-form-site-div">
+    <p>honours</p>
+    <h3>Enter website details</h3>
+    <form (ngSubmit)="onSubmit()" [formGroup]="formSiteFormGroup">
+      <mat-form-field>
+        <input matInput placeholder="title" type="text" formControlName="title">
+        <mat-error *ngIf="formSiteFormGroup.get('title').hasError('required')">
+          title is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="link" type="url" formControlName="link">
+        <mat-error *ngIf="formSiteFormGroup.get('link').hasError('required')">
+          link is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>description</mat-label>
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="5"
+          formControlName="description"
+        ></textarea>
+        <mat-error *ngIf="formSiteFormGroup.get('description').hasError('required')">
+          description is required
+        </mat-error>
+      </mat-form-field>
+      <input type="file" name="" id="" formControlName="landing_page_title" (change)="onImageSelect($event)">
+      <button type="submit" mat-raised-button color="primary">
+        <mat-progress-spinner mode="indeterminate" diameter="25" *ngIf="sendingRequest"></mat-progress-spinner>
+        <span>submit</span>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+@import '../../../styles.scss';
+
+.cstm-site-form-container {
+  height: 100%
+}
+
+.cstm-form-site-div {
+  height: 100%;
+  padding: 35px;
+  & > p, h3 {
+    text-align: center;
+    margin: 6px 0px;
+  }
+  & > h3 {
+    margin-top: 16px;
+    font-weight: lighter;
+    & > a, & > a:active {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: normal;
+    }
+  }
+}
+
+form {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  & > button[type="submit"] {
+    height: 60px;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 16px;
+    text-transform: uppercase;
+    & > span {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      & > span {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+:host ::ng-deep mat-progress-spinner circle {
+  stroke: white;
+}
+
+.cstm-img-preview-div {
+  height: 100%;
+  padding: 35px 0px 0px 0px;
+  text-align: center;
+  & > img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+mat-progress-spinner {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+}

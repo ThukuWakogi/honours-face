@@ -53,7 +53,6 @@ export class AuthenticationService {
   }
 
   getLoggedInUser() {
-    console.log('getting data')
     return this
       .http
       .get(
