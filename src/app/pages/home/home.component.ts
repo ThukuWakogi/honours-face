@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { ProjectService } from 'src/app/services/project/project.service'
+import { first } from 'rxjs/operators'
+import { environment } from 'src/environments/environment'
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  projects: any
+  private apiUrl = environment.apiUrl
 
-  constructor() { }
+  constructor(
+    private projectService: ProjectService
+  ) { }
 
   ngOnInit() {
+    this.loadAllProjects()
   }
 
+  private loadAllProjects() {
+    this
+      .projectService
+      .getProjects()
+      .pipe(first())
+      .subscribe(projects => {
+        this.projects = projects
+        console.log({projects})
+      })
+  }
 }
