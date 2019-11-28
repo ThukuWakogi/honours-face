@@ -3,7 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service'
 import { first } from 'rxjs/operators'
 import { Router } from '@angular/router'
-import { passwordsMatch } from '../../utils/customValidators'
 
 @Component({
   selector: 'app-register',
@@ -55,7 +54,7 @@ export class RegisterComponent implements OnInit {
       .register(this.registerForm.value)
       .pipe(first())
       .subscribe(
-        data => {this.router.navigate(['/login'])},
+        data => {this.router.navigate([''])},
         error => {
           console.log({error})
           this.sendingRequest = false

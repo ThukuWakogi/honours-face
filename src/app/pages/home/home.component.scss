@@ -8,6 +8,8 @@ mat-card {
   & > .cstm-img-div {
     & > img {
       width: 100% !important;
+      height: 168px;
+      object-fit: cover;
     }
   }
 }

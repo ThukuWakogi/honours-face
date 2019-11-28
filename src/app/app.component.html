@@ -2,8 +2,10 @@
 <mat-drawer-container hasBackdrop="True">
   <mat-drawer #drawer mode="push">
     <mat-nav-list>
-      <mat-list-item (click)="navigateToUrl('login')">login</mat-list-item>
-      <mat-list-item (click)="navigateToUrl('register')">register</mat-list-item>
+      <mat-list-item *ngIf="currentUser === null" (click)="navigateToUrl('login')">login</mat-list-item>
+      <mat-list-item *ngIf="currentUser === null" (click)="navigateToUrl('register')">register</mat-list-item>
+      <mat-list-item *ngIf="currentUser">{{ currentUser.username }}</mat-list-item>
+      <mat-list-item *ngIf="currentUser" (click)="logout()">logout</mat-list-item>
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>

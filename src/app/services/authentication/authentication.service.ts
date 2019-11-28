@@ -12,13 +12,13 @@ export class AuthenticationService {
   public currentUser: Observable<any>
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<any>({})
+    this.currentUserSubject = new BehaviorSubject<any>(null)
     this.currentUser = this.currentUserSubject.asObservable()
   }
 
   public get currentUserValue() {return this.currentUserSubject.value}
 
-  register(registrationData) {
+  register(registrationData: any) {
     return this
       .http
       .post(`${environment.apiUrl}/users/`, registrationData)
@@ -35,7 +35,7 @@ export class AuthenticationService {
       )
   }
 
-  login(loginData) {
+  login(loginData: any) {
     return this
       .http
       .post<any>(`${environment.apiUrl}/auth/`, loginData)
@@ -70,6 +70,10 @@ export class AuthenticationService {
           if (error.status === 401) this.currentUserSubject.next(null)
         }
       )
+  }
 
+  logout() {
+    localStorage.removeItem('hnrs_token')
+    this.currentUserSubject.next(null)
   }
 }

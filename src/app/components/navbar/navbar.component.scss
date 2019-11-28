@@ -13,6 +13,15 @@ mat-toolbar-row {
       height: 100%;
       width: 100%;
       border-radius: 0;
+      & > span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        & > span {
+          font-size: 12px;
+        }
+      }
     }
   }
   .cstm-right-nav-div {
@@ -34,6 +43,11 @@ mat-toolbar-row {
       justify-content: flex-end;
       align-items: center;
       text-transform: uppercase;
+      & > a {
+        text-decoration: none;
+        color: black;
+        margin: auto 0;
+      }
       & > .cstm-nav-avatar {
         width: 32px;
         height: 32px;

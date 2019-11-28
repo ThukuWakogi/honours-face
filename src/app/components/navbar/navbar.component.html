@@ -3,7 +3,7 @@
     <div class="cstm-left-nav-div">
       <button mat-button (click)="drawer.toggle()">
         <i class="material-icons">menu</i>
-        <span style="margin-left: 8px;">menu</span>
+        <span style="margin-left: 8px; text-transform: uppercase;">menu</span>
       </button>
     </div>
     <div class="cstm-right-nav-div">
@@ -11,7 +11,8 @@
         <i class="material-icons">search</i>
       </div>
       <div class="cstm-user-info-div">
-        <p class="mat-body-2">user info</p>
+        <a *ngIf="currentUser" class="mat-body-2" [routerLink]="['']">{{ currentUser.username }}</a>
+        <a *ngIf="currentUser === null" class="mat-body-2" [routerLink]="['/login']">login/register</a>
         <div class="cstm-nav-avatar"></div>
         <i class="material-icons">menu</i>
       </div>

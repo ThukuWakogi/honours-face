@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,17 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   @Input() drawer: any
+  currentUser: any
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {
+    this
+      .authenticationService
+      .currentUser
+      .subscribe(user => this.currentUser = user)
+  }
 
   ngOnInit() {
   }
