@@ -21,3 +21,15 @@ main {
 mat-nav-list {
   padding: 0px;
 }
+
+@media(max-width: 600px) {
+  mat-drawer-container {
+    height: 100%;
+    mat-drawer, mat-drawer-content {
+      margin-top: 56px;
+    }
+    mat-drawer {
+      width: 320px;
+    }
+  }
+}

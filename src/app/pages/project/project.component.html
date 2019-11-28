@@ -1,0 +1,17 @@
+<a *ngIf="project" href="{{ project.link }}" target="_blank">
+  <div
+    class="cstm-project-details-div"
+    [ngStyle]="{ 'background-image': 'url(' + apiUrl + project.landing_page_image + ')' }"
+  >
+    <div class="cstm-inner-project-details-div" fxLayout="column">
+      <div class="cstm-project-header" fxFlex="33%">
+        <h3>{{ project.date_added | date }}</h3>
+      </div>
+      <div class="cstm-project-body" fxFlex="33%">
+        <h2 class="mat-display-3">{{ project.title }}</h2>
+        <p>by {{project.user.username}} from somewhere with 6.44</p>
+      </div>
+      <div class="cstm-project-footer" fxFlex="33%"></div>
+    </div>
+  </div>
+</a>

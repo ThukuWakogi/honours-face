@@ -6,6 +6,7 @@ mat-card {
   border-radius: 0px;
   box-shadow: none !important;
   & > .cstm-img-div {
+    cursor: pointer;
     & > img {
       width: 100% !important;
       height: 168px;

@@ -28,5 +28,7 @@ export class ProjectService {
 
   getProjects() {return this.http.get(`${environment.apiUrl}/projects/`)}
 
+  getProjectById(id: any) {return this.http.get(`${environment.apiUrl}/projects/${id}/`)}
+
   public get projectsValue() {return this.projectsSubject.value}
 }

@@ -3,7 +3,7 @@
   <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="4px" fxLayoutAlign="center">
     <ng-container *ngFor="let project of projects">
       <mat-card>
-        <div class="cstm-img-div">
+        <div class="cstm-img-div" (click)="navigateToProject(project.id)">
           <img class="cstm-img" src="{{ apiUrl + project.landing_page_image }}" alt="Photo of a Shiba Inu">
         </div>
         <div class="cstm-site-info">

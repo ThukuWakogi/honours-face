@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { ProjectService } from 'src/app/services/project/project.service'
 import { first } from 'rxjs/operators'
 import { environment } from 'src/environments/environment'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,7 @@ export class HomeComponent implements OnInit {
   projects: any
   private apiUrl = environment.apiUrl
 
-  constructor(
-    private projectService: ProjectService
-  ) { }
+  constructor(private projectService: ProjectService, private router: Router) { }
 
   ngOnInit() {
     this.loadAllProjects()
@@ -30,4 +29,6 @@ export class HomeComponent implements OnInit {
         console.log({projects})
       })
   }
+
+  navigateToProject(id) {this.router.navigate(['project', id])}
 }
